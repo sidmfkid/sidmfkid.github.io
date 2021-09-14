@@ -4,9 +4,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sidney's Portfolio</title>
+
+
+    <!-- Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+
+    
+<!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Google Fonts Comfortaa CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
-<body>
-    <h1>Hello World</h1>
+<body class="container">
+    
+    <section class="welcome closed">
+
+        <div class="welcome__content">
+
+            <h1 id="app">Hi! I'm Sid! Click the button below to learn more about me!</h1>
+            <a id="welcome-btn" class="btn btn-3">Enter Here</a>
+        </div>
+    </section>
+
+    <section class="aboutme closed">
+
+        <div class="aboutme__content">
+
+        <div class="aboutme__content--card closed">
+
+            <div class="img-container">
+                <img src="/img/card_img.jpg" alt="">
+            </div>
+
+            <div class="info-container">
+                <div class="info-container__key">
+
+                    <span>Name:<span>
+                    <span>Location:<span>
+                    <span>Age:</span>
+                    <span>Kids:</span>
+                    <span>Vaccinated:</span>
+                    <span>Hobbies:</span>
+
+                </div>
+
+                <div class="info-container__values">
+
+                    <span>Sidney Moore</span>
+                    <span>Indianapolis, IN</span>
+                    <span>25</span>
+                    <span>1</span>
+                    <span>Yes</span>
+                    <span>Brainstorming ideas to prevent living in a dystopian society, reading,  learning, Rocket League, Music, and Coding.</span>
+
+                </div>
+
+            </div>
+
+            <i id="goBack" class="fas fa-chevron-circle-left closed"></i>
+            <i id="keepGoing" class="fas fa-chevron-circle-right closed"></i>
+        </div>
+
+        <div class="aboutme__content--info hide">
+
+            <h2>My Life Pre-Covid</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores tempore dolores accusantium natus quia, nobis aperiam obcaecati, quae ex perspiciatis sunt magnam blanditiis officiis nostrum ducimus totam. Consequuntur, fuga! Dolore.
+            Odio sunt ab repellendus cupiditate nobis est quisquam error libero incidunt veniam, sit modi sed debitis labore dolores repellat? Libero ea doloribus voluptatum nemo laborum mollitia non assumenda quae eaque?</p>
+
+            <h2>Notable Accomplishments</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores tempore dolores accusantium natus quia, nobis aperiam obcaecati, quae ex perspiciatis sunt magnam blanditiis officiis nostrum ducimus totam. Consequuntur, fuga! Dolore.
+            Odio sunt ab repellendus cupiditate nobis est quisquam error libero incidunt veniam, sit modi sed debitis labore dolores repellat? Libero ea doloribus voluptatum nemo laborum mollitia non assumenda quae eaque?</p>
+
+            <h2>Goals & Aspirations</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores tempore dolores accusantium natus quia, nobis aperiam obcaecati, quae ex perspiciatis sunt magnam blanditiis officiis nostrum ducimus totam. Consequuntur, fuga! Dolore.
+            Odio sunt ab repellendus cupiditate nobis est quisquam error libero incidunt veniam, sit modi sed debitis labore dolores repellat? Libero ea doloribus voluptatum nemo laborum mollitia non assumenda quae eaque?</p>
+
+            <h2>Personality</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores tempore dolores accusantium natus quia, nobis aperiam obcaecati, quae ex perspiciatis sunt magnam blanditiis officiis nostrum ducimus totam. Consequuntur, fuga! Dolore.
+            Odio sunt ab repellendus cupiditate nobis est quisquam error libero incidunt veniam, sit modi sed debitis labore dolores repellat? Libero ea doloribus voluptatum nemo laborum mollitia non assumenda quae eaque?</p>
+        </div>
+
+
+
+        </div>
+    </section>
+
+
+<!-- Typewritterjs CDN -->
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+
+<script src="/js/type.js"></script>
+    <script src="/js/app.js"></script>
+
 </body>
 </html>

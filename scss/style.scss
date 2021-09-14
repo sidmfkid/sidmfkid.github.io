@@ -1,0 +1,105 @@
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 1300px Mark Desktop Break Point  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+@mixin media-desktop {
+  @media screen and (min-width: break-point(break-point-desktop)) {
+    @content;
+  }
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 800px Mark Tablet Break Point  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+@mixin media-tablet {
+  @media screen and (max-width: break-point(break-point-tablet)) {
+    @content;
+  }
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 600px Mark Tablet Break Point  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+@mixin media-medium {
+  @media screen and (max-width: break-point(break-point-medium)) {
+    @content;
+  }
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 400px Mark Tablet Break Point  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+@mixin media-small {
+  @media screen and (max-width: break-point(break-point-small)) {
+    @content;
+  }
+}
+
+::selection {
+  background-color: var(--color-primary);
+  -webkit-text-fill-color: var(--color-secondary);
+}
+
+@import "1.reset";
+@import "2.variables";
+@import "3.utilities";
+@import "4.welcome";
+@import "5.aboutme";
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Placeholder Styles  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+%bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Icon Gradient Style 1  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+%icon-gradient {
+  color: linear-gradient(var(--secondary), var(--secondary-light));
+}
+
+%icon-gradient2 {
+  color: linear-gradient(
+    var(--secondary) 0%,
+    var(--secondary-light) 50%,
+    var(--secondary-light) 75%,
+    var(--secondary) 100%
+  );
+}
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Section Padding Styles  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+%sec-padding {
+  padding: 6vh 4vw;
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Section Headings h2 Styles  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+%sec-heading {
+  font-size: font-size(font-size-medium);
+  font-weight: font-weight(font-weight-light);
+  letter-spacing: 0.2rem;
+  color: var(--color-quinary);
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Section Paragraph p Styles  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+%sec-para {
+  font-size: font-size(font-size-small);
+  font-family: "Balsamiq Sans", cursive;
+  letter-spacing: 0.2rem;
+  color: var(--color-quinary);
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Section h3 Styles  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+%sec-h3 {
+  font-size: font-size(font-size-small);
+  color: var(--color-quinary);
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Section h4 Styles  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+%sec-h4 {
+  color: var(--color-quinary);
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Dark Mode Transition  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+  transition: all 0.5s !important;
+  transition-delay: 0 !important;
+}

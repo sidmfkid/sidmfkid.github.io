@@ -1,0 +1,67 @@
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Colors *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+// Light Color Palette (Custom Properties)
+html {
+  --blue-100: #caf0f8;
+  --blue-200: #ade8f4;
+  --blue-300: #90e0ef;
+  --blue-400: #48cae4;
+  --blue-500: #00b4d8;
+  --blue-600: #0096c7;
+  --blue-700: #0077b6;
+  --blue-800: #023e8a;
+  --blue-900: #03045e;
+}
+
+// Dark Color Palette (Custom Properties)
+html[data-theme="dark"] {
+  --primary: #392529;
+  --primary-light: hsl(348, 21%, 38%);
+  --secondary: #216858;
+  --secondary-light: hsl(166, 52%, 47%);
+  --tertiary: #16ea48;
+  --tertiary-light: hsl(134, 83%, 80%);
+  --quaternary: #26b6eb;
+  --quaternary-light: hsl(196, 83%, 84%);
+  --quinary: #f6ea16;
+  --quinary-light: hsl(57, 93%, 73%);
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Font Weights *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+$font-weights: (
+  "thin": 100,
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+  "black": 900,
+);
+
+@function font-weight($font-weight-style) {
+  @return map-get($font-weights, $font-weight-style);
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Font Sizes *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+$font-sizes: (
+  "small": calc(1.2rem + 0.5vw),
+  "regular": calc(1.5rem + 1vw),
+  "medium": calc(1.5rem + 2vw),
+  "large": calc(1.5rem + 5vw),
+  "xlarge": calc(2.5rem + 5vw),
+);
+
+@function font-size($font-size-style) {
+  @return map-get($font-sizes, $font-size-style);
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Break Points *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+$break-points: (
+  "break-point-small": 400px,
+  "break-point-medium": 600px,
+  "break-point-tablet": 800px,
+  "break-point-desktop": 1300px,
+);
+
+@function break-point($break-point-limit) {
+  @return map-get($break-points, $break-point-limit);
+}

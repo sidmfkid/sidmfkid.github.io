@@ -1,0 +1,42 @@
+.welcome {
+  grid-column: container-start / container-end;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: rotateX(0);
+  transform-origin: top;
+  opacity: 1;
+  transform-style: preserve-3d;
+  z-index: 1;
+
+  &.open {
+    transform: rotateX(180deg);
+    opacity: 0;
+  }
+
+  &.closed {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: font-size(regular);
+      text-align: center;
+      width: 90%;
+    }
+    a {
+      //   margin: 0 auto;
+    }
+  }
+}

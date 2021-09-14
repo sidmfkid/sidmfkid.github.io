@@ -1,0 +1,134 @@
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Comfortaa", cursive;
+  line-height: 1.9;
+  background-color: var(--blue-100);
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [container-start] 1fr [center-start]
+    repeat(6, [col-start] minmax(min-content, 16.66667rem) [col-end])
+    [center-end] 1fr [container-end];
+  grid-template-rows: 100vh repeat(9, min-content);
+
+  // Media Query 800 Mark Tablet
+
+  @include media-tablet {
+    grid-template-rows: 100vh repeat(9, min-content);
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: font-weight(font-weight-light);
+  letter-spacing: 0.2rem;
+  font-size: font-size(font-size-regular);
+}
+
+i {
+  color: var(--primary);
+  font-size: font-size(font-size-medium);
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  // background: var(--quaternary);
+  margin: 0.5rem;
+  font-size: calc(0.6rem + 1vw);
+  text-transform: uppercase;
+  font-weight: font-weight(medium);
+  line-height: 6rem;
+  height: 6rem;
+  width: 24rem;
+  border-radius: 5rem;
+
+  &.btn-1 {
+    background: linear-gradient(
+      to bottom,
+      var(--blue-200),
+      var(--blue-200) 50%,
+      var(--blue-400) 90%
+    );
+    color: var(--blue-600);
+    transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+    &:hover {
+      color: var(--blue-100);
+    }
+  }
+  &.btn-2 {
+    background: linear-gradient(
+      to bottom,
+      var(--blue-400),
+      var(--blue-400) 50%,
+      var(--blue-500) 70%,
+      var(--blue-500) 85%
+    );
+    color: var(--blue-200);
+    transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    &:hover {
+      color: var(--blue-700);
+    }
+  }
+
+  &.btn-3 {
+    background: var(--blue-300);
+    font-weight: font-weights(medium);
+    // background: linear-gradient(
+    //   to bottom,
+    //   var(--quaternary),
+    //   var(--quaternary) 50%,
+    //   var(--quaternary-dark) 90%
+    // );
+    border: 0.2rem var(--blue-600) solid;
+    color: var(--blue-100);
+    box-shadow: 0rem 0.2rem 0.5rem var(--blue-600),
+      0rem 0.2rem 1rem var(--blue-600);
+    transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+    &:hover,
+    &:active {
+      border-color: var(--blue-300);
+      box-shadow: 0rem 0.2rem 1rem var(--blue-600),
+        0rem 0.2rem 1.5rem var(--blue-600);
+    }
+  }
+  &.btn-4 {
+    background: var(--blue-400);
+    font-weight: font-weights(medium);
+    // background: linear-gradient(
+    //   to bottom,
+    //   var(--quaternary),
+    //   var(--quaternary) 50%,
+    //   var(--quaternary-dark) 90%
+    // );
+    border: 0.3rem var(--blue-500) solid;
+    color: var(--blue-200);
+    box-shadow: 0rem 0.2rem 0.5rem var(--blue-800),
+      0rem 0.2rem 1rem var(--blue-800);
+    transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    &:hover,
+    &:active {
+      border-color: var(--blue-500);
+      box-shadow: 0rem 0.2rem 1rem var(--blue-800),
+        0rem 0.2rem 1.5rem var(--blue-800);
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
