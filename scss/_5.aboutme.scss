@@ -1,11 +1,12 @@
 .aboutme {
+  overflow-x: hidden;
   @extend %sec-padding;
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   background: var(--blue-200);
   z-index: 1;
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -17,10 +18,12 @@
   &.open {
     transform: rotateX(0);
     opacity: 1;
+    height: 100vh;
   }
   &.closed {
     transform: rotateX(-180deg);
     opacity: 0;
+    height: 0vh;
   }
 
   &__content {
@@ -29,6 +32,7 @@
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     // grid-template-rows: 10rem repeat(6, 1fr);
     grid-gap: 5rem;
+    justify-content: center;
     place-items: center;
 
     &--card {
@@ -206,6 +210,34 @@
     &--info {
       //   grid-column: 5 / 10;
       //   grid-row: 2 / 4;
+    }
+  }
+
+  @include media-tablet {
+    &__content {
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      &--card {
+        height: 100%;
+        width: 100%;
+        padding-bottom: 10rem;
+
+        #goBack.open {
+          left: -10%;
+        }
+
+        #keepGoing.open {
+          right: -10%;
+        }
+
+        .img-container {
+          padding: 2rem 2rem;
+          width: 100%;
+        }
+
+        .info-container {
+          padding: 2rem 2rem;
+        }
+      }
     }
   }
 }

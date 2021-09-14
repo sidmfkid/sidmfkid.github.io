@@ -44,7 +44,7 @@ body {
   font-family: "Comfortaa", cursive;
   line-height: 1.9;
   background-color: var(--blue-100);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .container {
@@ -140,6 +140,7 @@ i {
 }
 
 .welcome {
+  overflow: hidden;
   grid-column: container-start / container-end;
   height: 100%;
   width: 100%;
@@ -184,12 +185,13 @@ i {
 }
 
 .aboutme {
+  overflow-x: hidden;
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   background: var(--blue-200);
   z-index: 1;
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -202,11 +204,13 @@ i {
 .aboutme.open {
   transform: rotateX(0);
   opacity: 1;
+  height: 100vh;
 }
 
 .aboutme.closed {
   transform: rotateX(-180deg);
   opacity: 0;
+  height: 0vh;
 }
 
 .aboutme__content {
@@ -214,6 +218,7 @@ i {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   grid-gap: 5rem;
+  justify-content: center;
   place-items: center;
 }
 
@@ -342,6 +347,30 @@ i {
   display: block;
   width: 100%;
   text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+  .aboutme__content {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+  .aboutme__content--card {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 10rem;
+  }
+  .aboutme__content--card #goBack.open {
+    left: -10%;
+  }
+  .aboutme__content--card #keepGoing.open {
+    right: -10%;
+  }
+  .aboutme__content--card .img-container {
+    padding: 2rem 2rem;
+    width: 100%;
+  }
+  .aboutme__content--card .info-container {
+    padding: 2rem 2rem;
+  }
 }
 
 @keyframes float {
