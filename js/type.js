@@ -43,27 +43,22 @@ typewriter
     setTimeout(() => {
         $('#goBack').toggleClass('open').toggleClass('closed')
         $('#keepGoing').toggleClass('open').toggleClass('closed')
-    },2500)
+    },2300)
 
     setTimeout(() => {
         $('.aboutme__content--card').css('animation', 'float 1s infinite 1s cubic-bezier(0.445, 0.05, 0.55, 0.95)');
-    },3000)
-
-    $('#goBack').on('click', function () {
-        $('.welcome').toggleClass('closed').toggleClass('open')
-        $('.aboutme').toggleClass('closed').toggleClass('open')
-        $('.aboutme__content--card').toggleClass('closed').toggleClass('open');
-        typewriter.start()
-        $('.aboutme__content--card').css('animation', 'none');
-        $('#goBack').toggleClass('open').toggleClass('closed')
-        $('#keepGoing').toggleClass('open').toggleClass('closed')
-     })
-
-
-
-
-
+    },2500)
   })
+
+  $('#goBack').on('click', function () {
+    $('.welcome').toggleClass('open').toggleClass('closed')
+    $('.aboutme').toggleClass('open').toggleClass('closed')
+    $('.aboutme__content--card').toggleClass('closed').toggleClass('open');
+    typewriter.start()
+    $('.aboutme__content--card').css('animation', 'none');
+    $('#goBack').toggleClass('closed').toggleClass('open');
+    $('#keepGoing').toggleClass('closed').toggleClass('open');
+ })
 
 });
 

@@ -179,6 +179,10 @@ i {
   width: 90%;
 }
 
+.welcome__content a {
+  cursor: pointer;
+}
+
 .aboutme {
   content: "";
   position: absolute;
