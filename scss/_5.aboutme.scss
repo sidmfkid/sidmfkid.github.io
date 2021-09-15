@@ -27,13 +27,41 @@
   }
 
   &__content {
-    padding: 0 5rem 5rem 5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    position: relative;
+
+    // padding: 0 5rem 5rem 5rem;
+    display: flex;
+    // grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     // grid-template-rows: 10rem repeat(6, 1fr);
-    grid-gap: 5rem;
+    // grid-gap: 5rem;
+    flex-wrap: nowrap;
     justify-content: center;
-    place-items: center;
+    align-items: center;
+
+    &.show-info {
+      z-index: -1;
+      //   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 5rem 5rem;
+      //   margin-left: 15rem;
+
+      .aboutme__content--card {
+        width: 50%;
+        height: 95%;
+        padding-top: 2rem;
+        transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+        #keepGoing {
+          //   display: block;
+          top: 90%;
+          transform-origin: center;
+          z-index: 10;
+          opacity: 1;
+        }
+      }
+    }
 
     &--card {
       position: relative;
@@ -42,10 +70,10 @@
       padding-bottom: 5rem;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: space-evenly;
       flex-direction: column;
       //   flex-wrap: wrap;
-      width: min-content;
+      width: 45%;
       height: 100%;
 
       background: linear-gradient(
@@ -70,6 +98,29 @@
       transform: translateX(-100vw);
       opacity: 0.5;
       transition: all 1.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+      &.open {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      &.animation {
+        animation: float 1s infinite 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      }
+
+      &.move-left {
+        transition: all 1s ease-in-out;
+
+        transform: translateX(-15vw);
+        display: block;
+        position: relative;
+        transform-style: flat;
+        opacity: 1;
+        // right: 30rem;
+      }
+      &.closed {
+        transform: translateX(-100vw);
+        opacity: 0.5;
+      }
 
       #goBack {
         z-index: -10;
@@ -141,6 +192,8 @@
         -webkit-text-fill-color: transparent;
         filter: drop-shadow(-0.5rem 0.2rem 0.5rem var(--blue-600));
 
+        cursor: pointer;
+
         &.open {
           opacity: 1;
           right: -20%;
@@ -149,15 +202,6 @@
           right: 20%;
           opacity: 0.5;
         }
-      }
-
-      &.open {
-        transform: translateX(0);
-        opacity: 1;
-      }
-      &.closed {
-        transform: translateX(-100vw);
-        opacity: 0.5;
       }
 
       .img-container {
@@ -207,35 +251,143 @@
         }
       }
     }
+    #nextSection {
+      position: absolute;
+      bottom: 0;
+      right: 40rem;
+      font-size: 20rem;
+      animation: none;
+      z-index: -10;
+      opacity: 0;
+      background: -webkit-linear-gradient(
+        180deg,
+        var(--blue-700) 4%,
+        var(--blue-600)
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      filter: drop-shadow(-1.5rem 0.2rem 0.5rem var(--blue-700)) blur(2px);
+
+      &.open {
+        right: 2%;
+        opacity: 1;
+      }
+    }
     &--info {
-      //   grid-column: 5 / 10;
-      //   grid-row: 2 / 4;
+      position: absolute;
+      top: 0rem;
+      right: 0rem;
+      z-index: -1;
+      display: block;
+      width: 100%;
+      height: 0px;
+      transform: scale(0) translateX(-50rem);
+      transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      opacity: 0;
+      transform-style: flat;
+      transform-origin: top;
+      //   overflow-y: hidden;
+      //   display: none;
+
+      h2 {
+        font-size: calc(1rem + 1vw);
+        margin-top: 3rem;
+        color: var(--blue-900);
+      }
+      p {
+        font-size: calc(0.5rem + 0.5vw);
+        color: var(--blue-700);
+        text-shadow: 0.1rem 0.1rem 0 white;
+      }
+      &.show-info {
+        position: relative;
+        top: 0;
+        left: 0rem;
+        display: block;
+        width: 40%;
+        height: 100%;
+        transform: translateX(0rem) scale(1);
+        z-index: -1;
+        opacity: 1;
+        overflow-y: visible;
+      }
+    }
+  }
+
+  @include media-desktop {
+    &__content {
+      &.show-info {
+        flex-wrap: nowrap;
+
+        .aboutme__content--card {
+          width: 50%;
+        }
+      }
     }
   }
 
   @include media-tablet {
     &__content {
-      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-      &--card {
+      //   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      padding: 3rem;
+      width: 100%;
+      &.show-info {
+        padding: 3rem;
+        flex-wrap: wrap;
+
+        .aboutme__content--card {
+          height: 100%;
+          width: 100%;
+          //   padding-bottom: 10rem;
+        }
+      }
+      #goBack.open {
+        left: -10%;
+      }
+
+      #keepGoing.open {
+        right: -10%;
+      }
+
+      .img-container {
+        padding: 2rem 2rem;
+        width: 100%;
+      }
+
+      .info-container {
+        padding: 2rem 2rem;
+      }
+
+      .aboutme__content--card {
         height: 100%;
         width: 100%;
-        padding-bottom: 10rem;
-
-        #goBack.open {
-          left: -10%;
+        &.move-left {
+          transform: translateY(-20vh);
         }
+        // width: 90%;
+      }
+      &--info {
+        position: relative;
+        transform-origin: top;
+        top: 0rem;
+        transform: translateY(-50rem);
+        transition: transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        width: 0%;
 
-        #keepGoing.open {
-          right: -10%;
-        }
-
-        .img-container {
-          padding: 2rem 2rem;
+        &.show-info {
+          transform: translateY(0rem);
+          top: 0rem;
           width: 100%;
-        }
 
-        .info-container {
-          padding: 2rem 2rem;
+          //   transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        }
+        h2 {
+          font-size: font-size(regular);
+        }
+        p {
+          font-size: font-size(small);
         }
       }
     }

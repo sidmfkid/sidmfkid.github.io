@@ -46,7 +46,7 @@ typewriter
     },2300)
 
     setTimeout(() => {
-        $('.aboutme__content--card').css('animation', 'float 1s infinite 1s cubic-bezier(0.445, 0.05, 0.55, 0.95)');
+        $('.aboutme__content--card').toggleClass('animation');
     },2500)
   })
 
@@ -55,11 +55,62 @@ typewriter
     $('.aboutme').toggleClass('open').toggleClass('closed')
     $('.aboutme__content--card').toggleClass('closed').toggleClass('open');
     typewriter.start()
-    $('.aboutme__content--card').css('animation', 'none');
+    $('.aboutme__content--card').toggleClass('animation');
     $('#goBack').toggleClass('closed').toggleClass('open');
     $('#keepGoing').toggleClass('closed').toggleClass('open');
  })
 
+
+ $('#keepGoing').on('click', function () {
+
+
+//  setTimeout(() => {
+//      $('.aboutme__content--card').toggleClass('animation');
+//  }, 100)
+
+ setTimeout(() => {
+    $('.aboutme__content--card').toggleClass('animation');
+}, 2000)
+
+
+setTimeout(() => {
+    $('.aboutme__content--card').toggleClass('move-left');
+}, 300)
+
+
+
+
+
+setTimeout(() => {
+    $('.aboutme__content').toggleClass('show-info')
+    $('.aboutme__content--info').toggleClass('show-info')
+    $('.aboutme__content--card').toggleClass('move-left');
+
+},800);
+    $(this).toggleClass('fas fa-chevron-circle-right').toggleClass('fas fa-chevron-circle-down')
+
+    // var $info = $('.aboutme__content--info')
+
+    // setTimeout(() => {
+    //     if ($info.hasClass('show-info') === false)
+    //     {
+    //         console.log($info.hasClass('show-info'));
+    //         $('.aboutme__content--info').toggleClass('set')
+    //     }
+    //     setTimeout(() => {
+    //         if ($info.hasClass('show-info') === false)
+    //     {
+    //         console.log($info.hasClass('show-info'));
+    //         $('.aboutme__content--info').toggleClass('set')
+    //     }
+    //     },700)
+    // }, 700)
+
+
+
+
+
+  })
 });
 
 

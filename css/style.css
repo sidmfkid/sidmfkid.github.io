@@ -214,12 +214,33 @@ i {
 }
 
 .aboutme__content {
-  padding: 0 5rem 5rem 5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-  grid-gap: 5rem;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
-  place-items: center;
+  align-items: center;
+}
+
+.aboutme__content.show-info {
+  z-index: -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5rem 5rem;
+}
+
+.aboutme__content.show-info .aboutme__content--card {
+  width: 50%;
+  height: 95%;
+  padding-top: 2rem;
+  transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.aboutme__content.show-info .aboutme__content--card #keepGoing {
+  top: 90%;
+  transform-origin: center;
+  z-index: 10;
+  opacity: 1;
 }
 
 .aboutme__content--card {
@@ -229,9 +250,9 @@ i {
   padding-bottom: 5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: space-evenly;
   flex-direction: column;
-  width: min-content;
+  width: 45%;
   height: 100%;
   background: linear-gradient(95deg, var(--blue-300), var(--blue-300) 3%, var(--blue-400) 10%, var(--blue-400) 90%, var(--blue-400) 97%, var(--blue-400));
   box-shadow: 0.5rem 0.5rem 0rem var(--blue-400), 0.1rem 0.5rem 0rem var(--blue-400), 0.3rem 0.5rem 0rem var(--blue-400), inset 0.5rem 0.5rem 2rem var(--blue-100), inset -0.5rem -0.5rem 2rem var(--blue-200), 0.7rem 0.7rem 0rem var(--blue-400), 2rem 2rem 5rem var(--blue-600);
@@ -240,6 +261,29 @@ i {
   transform: translateX(-100vw);
   opacity: 0.5;
   transition: all 1.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.aboutme__content--card.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.aboutme__content--card.animation {
+  animation: float 1s infinite 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.aboutme__content--card.move-left {
+  transition: all 1s ease-in-out;
+  transform: translateX(-15vw);
+  display: block;
+  position: relative;
+  transform-style: flat;
+  opacity: 1;
+}
+
+.aboutme__content--card.closed {
+  transform: translateX(-100vw);
+  opacity: 0.5;
 }
 
 .aboutme__content--card #goBack {
@@ -280,6 +324,7 @@ i {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(-0.5rem 0.2rem 0.5rem var(--blue-600));
+  cursor: pointer;
 }
 
 .aboutme__content--card #keepGoing.open {
@@ -289,16 +334,6 @@ i {
 
 .aboutme__content--card #keepGoing.closed {
   right: 20%;
-  opacity: 0.5;
-}
-
-.aboutme__content--card.open {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.aboutme__content--card.closed {
-  transform: translateX(-100vw);
   opacity: 0.5;
 }
 
@@ -349,27 +384,126 @@ i {
   text-align: right;
 }
 
+.aboutme__content #nextSection {
+  position: absolute;
+  bottom: 0;
+  right: 40rem;
+  font-size: 20rem;
+  animation: none;
+  z-index: -10;
+  opacity: 0;
+  background: -webkit-linear-gradient(180deg, var(--blue-700) 4%, var(--blue-600));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(-1.5rem 0.2rem 0.5rem var(--blue-700)) blur(2px);
+}
+
+.aboutme__content #nextSection.open {
+  right: 2%;
+  opacity: 1;
+}
+
+.aboutme__content--info {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 0px;
+  transform: scale(0) translateX(-50rem);
+  transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  opacity: 0;
+  transform-style: flat;
+  transform-origin: top;
+}
+
+.aboutme__content--info h2 {
+  font-size: calc(1rem + 1vw);
+  margin-top: 3rem;
+  color: var(--blue-900);
+}
+
+.aboutme__content--info p {
+  font-size: calc(0.5rem + 0.5vw);
+  color: var(--blue-700);
+  text-shadow: 0.1rem 0.1rem 0 white;
+}
+
+.aboutme__content--info.show-info {
+  position: relative;
+  top: 0;
+  left: 0rem;
+  display: block;
+  width: 40%;
+  height: 100%;
+  transform: translateX(0rem) scale(1);
+  z-index: -1;
+  opacity: 1;
+  overflow-y: visible;
+}
+
+@media screen and (min-width: 1300px) {
+  .aboutme__content.show-info {
+    flex-wrap: nowrap;
+  }
+  .aboutme__content.show-info .aboutme__content--card {
+    width: 50%;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .aboutme__content {
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    padding: 3rem;
+    width: 100%;
   }
-  .aboutme__content--card {
+  .aboutme__content.show-info {
+    padding: 3rem;
+    flex-wrap: wrap;
+  }
+  .aboutme__content.show-info .aboutme__content--card {
     height: 100%;
     width: 100%;
-    padding-bottom: 10rem;
   }
-  .aboutme__content--card #goBack.open {
+  .aboutme__content #goBack.open {
     left: -10%;
   }
-  .aboutme__content--card #keepGoing.open {
+  .aboutme__content #keepGoing.open {
     right: -10%;
   }
-  .aboutme__content--card .img-container {
+  .aboutme__content .img-container {
     padding: 2rem 2rem;
     width: 100%;
   }
-  .aboutme__content--card .info-container {
+  .aboutme__content .info-container {
     padding: 2rem 2rem;
+  }
+  .aboutme__content .aboutme__content--card {
+    height: 100%;
+    width: 100%;
+  }
+  .aboutme__content .aboutme__content--card.move-left {
+    transform: translateY(-20vh);
+  }
+  .aboutme__content--info {
+    position: relative;
+    transform-origin: top;
+    top: 0rem;
+    transform: translateY(-50rem);
+    transition: transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    width: 0%;
+  }
+  .aboutme__content--info.show-info {
+    transform: translateY(0rem);
+    top: 0rem;
+    width: 100%;
+  }
+  .aboutme__content--info h2 {
+    font-size: calc(1.5rem + 1vw);
+  }
+  .aboutme__content--info p {
+    font-size: calc(1.2rem + 0.5vw);
   }
 }
 
