@@ -2,26 +2,33 @@
   font-size: 62.5%;
 }
 
+// *,
+// *::after,
+// *::before {
+//   border: 1px solid red !important;
+//   outline: 1px solid blue !important;
+//   background: black !important;
+// }
+
 body {
   font-family: "Comfortaa", cursive;
   line-height: 1.9;
   background-color: var(--blue-100);
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 .container {
-  display: grid;
-  grid-template-columns:
-    [container-start] 1fr [center-start]
-    repeat(6, [col-start] minmax(min-content, 16.66667rem) [col-end])
-    [center-end] 1fr [container-end];
-  grid-template-rows: 100vh repeat(9, min-content);
+  // display: grid;
+  // grid-template-columns:
+  //   [container-start] 1fr [center-start]
+  //   repeat(6, [col-start] minmax(min-content, 16.66667rem) [col-end])
+  //   [center-end] 1fr [container-end];
+  // grid-template-rows: 100vh repeat(9, min-content);
 
   // Media Query 800 Mark Tablet
 
-  @include media-tablet {
-    grid-template-rows: 100vh repeat(9, min-content);
-  }
+  width: 100vw;
+  height: 100vh;
 }
 
 li {
@@ -98,6 +105,7 @@ i {
     box-shadow: 0rem 0.2rem 0.5rem var(--blue-600),
       0rem 0.2rem 1rem var(--blue-600);
     transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    width: 30rem;
 
     &:hover,
     &:active {
@@ -131,4 +139,16 @@ i {
 
 .hide {
   display: none;
+}
+
+.blur {
+  filter: blur(10px);
+  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 0;
+}
+
+.unblur {
+  filter: blur(0px);
+  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 1;
 }

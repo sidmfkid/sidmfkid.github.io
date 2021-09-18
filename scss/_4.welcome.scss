@@ -13,24 +13,32 @@
   transform-origin: top;
   opacity: 1;
   transform-style: preserve-3d;
-  z-index: 1;
+  z-index: 10;
 
   &.open {
     transform: rotateX(180deg);
     opacity: 0;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &.next {
+      display: none;
+    }
   }
 
   &.closed {
     transform: rotateX(0deg);
     opacity: 1;
+    // transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
   &__content {
+    display: block;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin: auto;
     h1 {
       font-size: font-size(regular);
       text-align: center;
@@ -41,5 +49,6 @@
     }
   }
   @include media-tablet {
+    height: 100vh;
   }
 }
