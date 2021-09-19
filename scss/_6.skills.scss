@@ -9,12 +9,20 @@
   width: 0;
   height: 0;
 
+  &.open {
+    transform: scale(1);
+    width: 100vw;
+    height: 90vh;
+    transform-origin: center;
+    transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+
   &.next {
     display: none;
   }
   &.closed {
     transform: scale(0);
-
+  }
   i {
     font-size: font-size(large);
     padding: 0 1rem;
@@ -149,6 +157,7 @@
     padding: 2rem 1rem;
 
     &__content {
+      position: relative;
       padding: 2rem;
       grid-template-columns: 1fr 2fr 3fr;
 
@@ -158,6 +167,19 @@
       div {
         grid-column: 1 / 3;
       }
+    }
+    i {
+      font-size: calc(5rem + 4vw);
+    }
+    #backToAbout {
+      position: absolute;
+      bottom: 10rem;
+      left: 10rem;
+    }
+    #toHistory {
+      position: absolute;
+      bottom: 10rem;
+      right: 10rem;
     }
   }
 }

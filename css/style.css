@@ -216,6 +216,13 @@ i {
   opacity: 0;
 }
 
+.aboutme .Typewriter__cursor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+}
+
 .aboutme.open {
   position: relative;
   transform: rotateX(0);
@@ -260,7 +267,7 @@ i {
 }
 
 .aboutme__content.show-info .aboutme__content--card {
-  flex-basis: calc(45rem + 15vw);
+  flex-basis: calc(35rem + 15vw);
   padding-top: 2rem;
   transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
@@ -382,7 +389,8 @@ i {
   box-shadow: inset 2rem 4rem 0rem var(--blue-900);
 }
 
-.aboutme__content--card .info-container {
+.aboutme__content--card .info-container .Typewriter__wrapper {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
@@ -394,13 +402,20 @@ i {
   color: var(--blue-100);
 }
 
-.aboutme__content--card .info-container .key {
+.aboutme__content--card .info-container .Typewriter__wrapper .Typewriter__cursor {
+  position: relative;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+.aboutme__content--card .info-container .Typewriter__wrapper .key {
   display: block;
   height: min-content;
   width: 100%;
 }
 
-.aboutme__content--card .info-container .key > .value {
+.aboutme__content--card .info-container .Typewriter__wrapper .key > .value {
   display: inline-block;
   margin-left: auto;
 }
@@ -504,7 +519,7 @@ i {
   .aboutme.open {
     padding: 1rem 0;
     display: flex;
-    height: auto;
+    height: 100%;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -520,11 +535,11 @@ i {
     justify-content: center;
     align-items: center;
   }
-  .aboutme__content .aboutme__content--card {
-    width: 80%;
+  .aboutme__content .aboutme__content--card.open {
+    flex-basis: calc(30rem + 2vw);
     height: 100%;
   }
-  .aboutme__content .aboutme__content--card.move-left {
+  .aboutme__content .aboutme__content--card.open.move-left {
     transform: translateY(-20vh);
   }
   .aboutme__content.show-info {
@@ -533,7 +548,7 @@ i {
   }
   .aboutme__content.show-info .aboutme__content--card {
     height: 100%;
-    width: 100%;
+    width: 70%;
   }
   .aboutme__content #nextSection.open {
     bottom: -25rem;
@@ -603,8 +618,20 @@ i {
   height: 0;
 }
 
+.skills.open {
+  transform: scale(1);
+  width: 100vw;
+  height: 90vh;
+  transform-origin: center;
+  transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
 .skills.next {
   display: none;
+}
+
+.skills.closed {
+  transform: scale(0);
 }
 
 .skills i {
@@ -747,6 +774,7 @@ i {
     padding: 2rem 1rem;
   }
   .skills__content {
+    position: relative;
     padding: 2rem;
     grid-template-columns: 1fr 2fr 3fr;
   }
@@ -755,6 +783,19 @@ i {
   }
   .skills__content div {
     grid-column: 1 / 3;
+  }
+  .skills i {
+    font-size: calc(5rem + 4vw);
+  }
+  .skills #backToAbout {
+    position: absolute;
+    bottom: 10rem;
+    left: 10rem;
+  }
+  .skills #toHistory {
+    position: absolute;
+    bottom: 10rem;
+    right: 10rem;
   }
 }
 
@@ -809,7 +850,7 @@ i {
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  place-items: center;
+  place-items: start;
   grid-gap: 1rem;
   padding: 2rem 2rem 4rem 2rem;
   border-radius: 5rem;
@@ -819,22 +860,68 @@ i {
   box-shadow: 1rem 1rem 3rem var(--blue-700);
 }
 
-.work__content--card img {
+.work__content--card a {
+  place-self: center;
   grid-column: 1 / 3;
   width: 30rem;
-  border-radius: 30rem;
   margin-bottom: 4rem;
+}
+
+.work__content--card a img {
+  width: 100%;
   box-shadow: 0 1.5rem 2rem var(--blue-700);
+  border-radius: 30rem;
 }
 
 .work__content--card .key {
   text-align: center;
   font-size: calc(1.2rem + 0.5vw);
+  width: 100%;
 }
 
 .work__content--card .value {
   text-align: center;
   font-size: calc(1.2rem + 0.5vw);
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .work {
+    padding: 3rem;
+    height: auto;
+  }
+  .work__content i {
+    top: 48%;
+    font-size: 7rem;
+  }
+  .work__content i:nth-of-type(1) {
+    left: 5%;
+  }
+  .work__content i:nth-of-type(2) {
+    right: 5%;
+    visibility: hidden;
+  }
+  .work__content--card {
+    padding: 1rem 1rem;
+  }
+  .work__content--card .value,
+  .work__content--card .key {
+    font-size: calc(1.5rem + 1vw);
+  }
+  .work__content--card a {
+    place-self: center;
+    grid-column: 1 / 3;
+    width: 25rem;
+    margin-bottom: 4rem;
+  }
+  .work__content--card a img {
+    width: 100%;
+    box-shadow: 0 1.5rem 2rem var(--blue-700);
+    border-radius: 30rem;
+  }
+  .work__content--card:nth-of-type(1) {
+    margin-bottom: 5rem;
+  }
 }
 
 .aboutme {

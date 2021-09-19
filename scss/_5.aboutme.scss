@@ -11,7 +11,12 @@
   transform-origin: bottom;
   transform-style: preserve-3d;
   opacity: 0;
-
+  .Typewriter__cursor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+  }
   &.open {
     position: relative;
     transform: rotateX(0);
@@ -60,7 +65,7 @@
       //   margin-left: 15rem;
 
       .aboutme__content--card {
-        flex-basis: calc(45rem + 15vw);
+        flex-basis: calc(35rem + 15vw);
 
         padding-top: 2rem;
         transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -234,7 +239,8 @@
         }
       }
 
-      .info-container {
+      .info-container .Typewriter__wrapper {
+        position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
@@ -245,6 +251,13 @@
         font-size: calc(0.71rem + 1vw);
         padding: 0 5rem;
         color: var(--blue-100);
+
+        .Typewriter__cursor {
+          position: relative;
+          top: 0;
+          right: 0;
+          visibility: hidden;
+        }
 
         .key {
           display: block;
@@ -361,7 +374,7 @@
     &.open {
       padding: 1rem 0;
       display: flex;
-      height: auto;
+      height: 100%;
       justify-content: center;
       align-items: center;
       width: 100%;
@@ -381,8 +394,8 @@
       justify-content: center;
       align-items: center;
 
-      .aboutme__content--card {
-        width: 80%;
+      .aboutme__content--card.open {
+        flex-basis: calc(30rem + 2vw);
         height: 100%;
         &.move-left {
           transform: translateY(-20vh);
@@ -395,7 +408,7 @@
 
         .aboutme__content--card {
           height: 100%;
-          width: 100%;
+          width: 70%;
           //   padding-bottom: 10rem;
         }
       }
