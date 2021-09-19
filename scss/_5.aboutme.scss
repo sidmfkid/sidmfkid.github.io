@@ -393,6 +393,11 @@
       height: auto;
       justify-content: center;
       align-items: center;
+      &--card {
+        .info-container .Typewriter__wrapper {
+          padding: 0 1rem;
+        }
+      }
 
       .aboutme__content--card.open {
         flex-basis: calc(30rem + 2vw);
@@ -434,7 +439,7 @@
       }
 
       .info-container {
-        padding: 2rem 2rem;
+        padding: 1rem 1rem;
       }
 
       &--info {
