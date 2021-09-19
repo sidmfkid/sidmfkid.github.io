@@ -415,9 +415,10 @@ i {
   width: 100%;
 }
 
-.aboutme__content--card .info-container .Typewriter__wrapper .key > .value {
+.aboutme__content--card .info-container .Typewriter__wrapper .value {
   display: inline-block;
   margin-left: auto;
+  width: 100%;
 }
 
 .aboutme__content #nextSection {

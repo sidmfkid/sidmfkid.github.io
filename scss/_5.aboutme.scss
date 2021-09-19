@@ -262,11 +262,12 @@
         .key {
           display: block;
           height: min-content;
-          & > .value {
-            display: inline-block;
-            margin-left: auto;
-          }
 
+          width: 100%;
+        }
+        .value {
+          display: inline-block;
+          margin-left: auto;
           width: 100%;
         }
       }
