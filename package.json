@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "http://sidmfkid.github.io/sidmfkid.github.io",
+  "homepage": "http://sidmfkid.github.io/",
   "eslintConfig": {
     "extends": [
       "react-app",
