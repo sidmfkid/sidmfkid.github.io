@@ -1,0 +1,123 @@
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 1300px Mark Desktop Break Point  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+@mixin media-desktop {
+    @media screen and (min-width: break-point(break-point-desktop)) {
+        @content;
+    }
+}
+
+@mixin media-desktop-max {
+    @media screen and (max-width: break-point(break-point-desktop)) {
+        @content;
+    }
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 800px Mark Tablet Break Point  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+@mixin media-tablet {
+    @media screen and (max-width: break-point(break-point-tablet)) {
+        @content;
+    }
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 600px Mark Tablet Break Point  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+@mixin media-medium {
+    @media screen and (max-width: break-point(break-point-medium)) {
+        @content;
+    }
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 400px Mark Tablet Break Point  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+@mixin media-small {
+    @media screen and (max-width: break-point(break-point-small)) {
+        @content;
+    }
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 400px Mark Tablet Break Point  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+@mixin media-xsmall {
+    @media screen and (max-width: break-point(break-point-xsmall)) {
+        @content;
+    }
+}
+
+@mixin section-grid {
+    @include media-desktop-max {
+        display: grid;
+        grid-template-columns: 1fr repeat(12, 7.2rem) 1fr;
+
+        grid-template-rows: auto;
+        grid-gap: 2.4rem;
+    }
+
+    @include media-tablet {
+        display: grid;
+        grid-template-columns: minmax(0rem, 12rem) repeat(6, 128px) minmax(0rem, 12rem);
+
+        grid-template-rows: auto;
+        grid-gap: 2.4rem;
+    }
+
+    @include media-medium {
+        display: grid;
+        grid-template-columns: minmax(0rem, 2.4rem) repeat(6, 1fr) minmax(0rem, 2.4rem);
+        grid-template-rows: auto;
+        grid-gap: 2.4rem;
+    }
+    @include media-small {
+        display: grid;
+        grid-template-columns: 1.6rem repeat(6, 1fr) 1.6rem;
+        grid-template-rows: auto;
+        grid-gap: 2.4rem;
+    }
+    @include media-desktop {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: minmax(18.6rem, 1fr) repeat(12, 72px) minmax(18.6rem, 1fr);
+        grid-gap: 2.4rem;
+    }
+}
+
+@mixin section-container {
+    @include media-desktop-max {
+        grid-column: 2 / 14;
+    }
+    @include media-tablet {
+        grid-column: 2 / 8;
+    }
+
+    @include media-medium {
+        // grid-column: 2 / 8;
+        width: 100%;
+    }
+
+    @include media-small {
+        grid-column: 2 / 8;
+        width: 100%;
+    }
+
+    @include media-desktop {
+        grid-column: 2 / 14;
+    }
+}
+
+@mixin cardTitle {
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: white;
+}
+@mixin cardType {
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: white;
+}
+
+@mixin cardYear {
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    color: white;
+}

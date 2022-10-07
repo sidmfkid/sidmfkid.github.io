@@ -1,0 +1,11 @@
+$break-points: (
+    "break-point-xsmall": 400px,
+    "break-point-small": 600px,
+    "break-point-medium": 938px,
+    "break-point-tablet": 1180px,
+    "break-point-desktop": 1496px,
+);
+
+@function break-point($break-point-limit) {
+    @return map-get($break-points, $break-point-limit);
+}

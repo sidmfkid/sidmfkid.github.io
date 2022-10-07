@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Bella Moore Aesthestics",
+    "year": 2022,
+    "type": "Custom Shopify Theme",
+    "languages": ["Javascript", "HTML", "CSS/SASS", "Liquid", "Json"],
+    "tools": ["Gulp.js", "Git", "Shopify CLI"]
+  },
+  {
+    "title": "You Are",
+    "year": 2022,
+    "type": "Custom Shopify Theme",
+    "languages": ["Javascript", "HTML", "CSS/SASS", "Liquid", "Json"],
+    "tools": ["Gulp.js", "Git", "Shopify CLI"]
+  },
+  {
+    "title": "24K Nail Spa",
+    "year": 2021,
+    "type": "Custom Shopify Theme/App",
+    "languages": ["Javascript", "HTML", "CSS/SASS", "Liquid", "Json"],
+    "tools": ["Gulp.js", "Git", "Shopify CLI"],
+    "stack": ["Node.js", "Express.js"]
+  },
+  {
+    "title": "Shop Writer",
+    "year": 2022,
+    "type": "Custom Shopify App",
+    "tools": [
+      "Shopify API",
+      "Open AI API",
+      "Polaris UI",
+      "GraphQL",
+      "Git",
+      "Shopify CLI"
+    ],
+    "stack": ["MongoDB", "Express.js", "React.js", "Node.js"]
+  },
+  {
+    "title": "Sizely",
+    "year": 2022,
+    "type": "Custom Shopify App",
+    "tools": ["Shopify API", "Bootstrap", "GraphQL", "Git", "Shopify CLI"],
+    "stack": ["MongoDB", "Express.js", "React.js", "Node.js"]
+  },
+  {
+    "title": "Youtube Clone",
+    "year": 2021,
+    "type": "Personal Project",
+    "languages": ["Javascript", "HTML", "CSS/SASS", "Liquid", "Json"],
+    "stack": ["MongoDB", "Express.js", "React.js", "Node.js"]
+  }
+]
