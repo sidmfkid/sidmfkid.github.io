@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Animator,
   Sticky,
@@ -91,7 +92,21 @@ const toolInfo = [
   },
 ];
 
-function Card({ title, year, type, langs, tools, stack, info, section }) {
+function Card({
+  title,
+  year,
+  type,
+  langs,
+  tools,
+  stack,
+  info,
+  section,
+  github,
+  link,
+  figma,
+}) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   const languages = langs?.map((l) => {
     return <li key={l}>{l}</li>;
   });
@@ -142,7 +157,11 @@ function Card({ title, year, type, langs, tools, stack, info, section }) {
     return (
       <div className="item">
         <Animator
-          animation={batch(FadeIn(), MoveIn(i * 100 + 50), -i * 100 + 50)}
+          animation={batch(
+            FadeIn(),
+            MoveIn(i * 100 + 50, -i * 100 + 50),
+            MoveOut(-i * 100 + 50, i * 100 + 50)
+          )}
         >
           <div className="item__icon">
             <img src={lib.svg} alt=""></img>
@@ -160,7 +179,11 @@ function Card({ title, year, type, langs, tools, stack, info, section }) {
     return (
       <div className="item">
         <Animator
-          animation={batch(FadeIn(), MoveIn(i * -100 - 50), i * -100 - 50)}
+          animation={batch(
+            FadeIn(),
+            MoveIn(i * 100 - 50, i * 100 - 50),
+            MoveOut(-i * 100 + 50, -i * 100 + 50)
+          )}
         >
           <div className="item__icon">
             <img src={tool.svg} alt=""></img>
@@ -200,26 +223,79 @@ function Card({ title, year, type, langs, tools, stack, info, section }) {
       </div>
     );
   } else {
+    const cardClass = isFlipped ? "card flip" : "card";
+    const linkEl = link.length ? (
+      <div className="link">
+        <a href={link}>View Live</a>
+        {/* <span className="material-symbols-outlined icon">arrow_forward</span> */}
+      </div>
+    ) : (
+      ""
+    );
+
+    const githubEl = github.length && (
+      <div className="link">
+        <a href={github}>View Github Repo</a>
+        {/* <span className="material-symbols-outlined icon">arrow_forward</span> */}
+      </div>
+    );
+
+    const figmaEl = figma?.length ? (
+      <div className="link">
+        <a href={figma}>View Figma File</a>
+        {/* <span className="material-symbols-outlined icon">arrow_forward</span> */}
+      </div>
+    ) : (
+      ""
+    );
+
     return (
-      <div className="card">
-        <div className="card__heading">
-          <div className="card__wrapper">
-            <h3 className="card__title">{title}</h3>
-            <div className="card__year">{year}</div>
+      <div className={cardClass}>
+        <div className="card__front">
+          <div className="card__heading">
+            <div className="card__wrapper">
+              <h3 className="card__title">{title}</h3>
+              <div className="card__year">{year}</div>
+            </div>
+            <div className="card__type">{type}</div>
+            <div className="card__divider"></div>
           </div>
-          <div className="card__type">{type}</div>
-          <div className="card__divider"></div>
+          <div className="card__body">
+            {cardListLang}
+            {cardListTools}
+            {cardListStack}
+          </div>
+          <div className="card__footer">
+            <button onClick={() => setIsFlipped(true)}>
+              <span>More Info</span>
+              <span className="material-symbols-outlined icon">
+                arrow_forward
+              </span>
+            </button>
+          </div>
         </div>
-        <div className="card__body">
-          {cardListLang}
-          {cardListTools}
-          {cardListStack}
-        </div>
-        <div className="card__footer hide">
-          <button>
-            <span>More Info</span>
-            <span class="material-symbols-outlined icon">arrow_forward</span>
-          </button>
+        <div className="card__back">
+          <div className="card__heading">
+            <div className="card__wrapper">
+              <h3 className="card__title">{title}</h3>
+              <div className="card__year">{year}</div>
+            </div>
+            <div className="card__type">{type}</div>
+            <div className="card__divider"></div>
+          </div>
+          <div className="card__body">
+            {linkEl}
+            {githubEl}
+            {figmaEl}
+          </div>
+          <div className="card__footer">
+            <button onClick={() => setIsFlipped(false)}>
+              <span>Go Back</span>
+              <span className="material-symbols-outlined icon">
+                arrow_forward
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     );

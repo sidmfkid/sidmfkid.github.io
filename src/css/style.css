@@ -40,6 +40,7 @@ p {
   width: 100%;
   display: grid;
   height: 100vh;
+  overflow-y: visible;
   align-items: center;
 }
 @media screen and (max-width: 1496px) {
@@ -163,6 +164,18 @@ p {
   letter-spacing: 0.2rem;
   color: white;
 }
+@media screen and (max-width: 938px) {
+  .section__subTitle {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section__subTitle {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+  }
+}
 .section__subTitle span {
   display: block;
   font-size: 2rem;
@@ -201,11 +214,12 @@ p {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 }
 .section__body .cards {
-  overflow-x: scroll;
   padding: 2.4rem 0rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2.4rem;
+  display: flex;
+  gap: 2.4rem;
+  overflow-y: visible;
+  overflow-x: scroll;
+  overflow-y: visible;
   grid-template-rows: auto-fill;
 }
 @media screen and (max-width: 1180px) {
@@ -220,6 +234,8 @@ p {
 @media screen and (max-width: 600px) {
   .section__body .cards {
     display: flex;
+    overflow-x: scroll;
+    overflow-y: visible;
     width: 100%;
   }
   .section__body .cards .card {
@@ -251,11 +267,46 @@ p {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.688);
+  position: relative;
+  min-width: 30rem;
+  min-height: 38.5rem;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+.card.flip {
+  transform: rotateY(180deg);
+}
+.card.flip .card__back {
+  opacity: 1;
+}
+.card.flip .card__front {
+  opacity: 0;
+}
+.card__front, .card__back {
   display: grid;
-  grid-template-rows: auto-fill;
+  grid-template-rows: auto;
+  backface-visibility: hidden;
+  padding: 1.6rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s ease;
+}
+.card__back {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+.card__back .card__body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
 }
 .card.skills {
   width: 100%;
+  min-width: unset;
+  min-height: unset;
 }
 .card__heading {
   width: 100%;
@@ -284,6 +335,7 @@ p {
 .card__wrapper.skills {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 .card__year {
   font-family: "Roboto Mono", sans-serif;
@@ -331,6 +383,23 @@ p {
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 1.6rem;
+}
+.card__body .link {
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  width: 100%;
+  height: min-content;
+}
+.card__body .link a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding-bottom: 0.8rem;
+  width: fit-content;
+  margin: 0 auto;
+  border-bottom: 1px solid white;
 }
 .card__footer {
   width: 100%;

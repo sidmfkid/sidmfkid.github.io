@@ -30,12 +30,15 @@ function App() {
         langs={v?.languages}
         tools={v?.tools}
         stack={v?.stack}
+        link={v?.link}
+        github={v?.github}
+        figma={v?.figma}
       />
     );
   });
 
   return (
-    <ScrollContainer snap="proximity">
+    <ScrollContainer snap="mandatory">
       {/* <img className="bg-image" src={bgImage} alt=""></img> */}
       {/* <div className="bg"> */}
       <ScrollPage page={0}>
@@ -43,7 +46,11 @@ function App() {
           <div className="main">
             <section className="section">
               <div className="section__container">
-                <div className="section__title">Sidney Moore</div>
+                <Animator
+                  animation={batch(Fade(), MoveIn(0, -300), MoveOut(0, 500))}
+                >
+                  <div className="section__title">Sidney Moore</div>
+                </Animator>
                 <Animator animation={batch(MoveOut(-500, 0), Fade())}>
                   <div className="section__divider"></div>
                 </Animator>
@@ -76,7 +83,9 @@ function App() {
         <div className="main">
           <section className="section">
             <div className="section__container">
-              <Animator animation={FadeIn()}>
+              <Animator
+                animation={batch(Fade(), MoveIn(0, -300), MoveOut(0, 500))}
+              >
                 <div className="section__title">About Me</div>
               </Animator>
               <Animator
@@ -119,7 +128,9 @@ function App() {
         <div className="main">
           <section className="section">
             <div className="section__container">
-              <Animator animation={FadeIn()}>
+              <Animator
+                animation={batch(FadeIn(), MoveIn(500, 0), MoveOut(-500, 0))}
+              >
                 <div className="section__title">Projects</div>
               </Animator>
               <Animator
@@ -163,7 +174,9 @@ function App() {
         <div className="main skills">
           <section className="section">
             <div className="section__container">
-              <Animator animation={FadeIn()}>
+              <Animator
+                animation={batch(Fade(), MoveIn(0, -300), MoveOut(0, 300))}
+              >
                 <div className="section__title">Skills/Experience</div>
               </Animator>
               <Animator
@@ -174,7 +187,7 @@ function App() {
               <div className="section__body skills">
                 <Card title="Languages/Frameworks/Libraries" section={"libs"} />
 
-                <Card title="Tools" section={"tools"} />
+                {/* <Card title="Tools" section={"tools"} /> */}
               </div>
               {/* <div className="section__footer">
                 <button className="back">
@@ -188,8 +201,55 @@ function App() {
               </div> */}
             </div>
           </section>
+        </div>
+      </ScrollPage>
+      <ScrollPage page={4}>
+        <div className="main skills">
+          <section className="section">
+            <div className="section__container">
+              <Animator
+                animation={batch(Fade(), MoveIn(0, -300), MoveOut(0, 300))}
+              >
+                <div className="section__title">Skills/Experience</div>
+              </Animator>
+              <Animator
+                animation={batch(MoveIn(-500, 0), Fade(), MoveOut(800, 0))}
+              >
+                <div className="section__divider"></div>
+              </Animator>
+              <div className="section__body skills">
+                {/* <Card title="Languages/Frameworks/Libraries" section={"libs"} /> */}
 
-          {/* <section className="section">
+                <Card title="Tools" section={"tools"} />
+              </div>
+            </div>
+          </section>
+        </div>
+      </ScrollPage>
+      <ScrollPage page={5}>
+        <Animator animation={batch(Fade(), MoveOut(0, -500))}>
+          <div className="main">
+            <section className="section">
+              <div className="section__container">
+                <Animator
+                  animation={batch(Fade(), MoveIn(0, -300), MoveOut(0, 500))}
+                >
+                  <div className="section__title">
+                    Open For Freelance Work & Full-Time Job Opportunities
+                  </div>
+                </Animator>
+                <Animator animation={batch(MoveOut(-500, 0), Fade())}>
+                  <div className="section__divider"></div>
+                </Animator>
+                <Animator animation={batch(MoveOut(500, 0), Fade())}>
+                  <div className="section__subTitle">
+                    Email me at sidneyamoore96@gmail.com
+                  </div>
+                </Animator>
+              </div>
+            </section>
+
+            {/* <section className="section">
         <div className="section__container">
           <div className="section__title">Sidney Moore</div>
           <div className="section__divider"></div>
@@ -203,7 +263,8 @@ function App() {
           <div className="section__subTitle">Full Stack Web Developer</div>
         </div>
       </section> */}
-        </div>
+          </div>
+        </Animator>
       </ScrollPage>
       {/* </div> */}
     </ScrollContainer>

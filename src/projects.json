@@ -4,14 +4,20 @@
     "year": 2022,
     "type": "Custom Shopify Theme",
     "languages": ["Javascript", "HTML", "CSS/SASS", "Liquid", "Json"],
-    "tools": ["Gulp.js", "Git", "Shopify CLI"]
+    "tools": ["Gulp.js", "Git", "Shopify CLI"],
+    "link": "https://bella-moore-aesthestics.myshopify.com/",
+    "figma": "https://www.figma.com/file/aabAFNonFh3KMqvfSvdcHi/Bella-Moore-Aesthetics?node-id=0%3A1",
+    "github": "https://github.com/sidmfkid/bella-moore-aesthestics"
   },
   {
     "title": "You Are",
     "year": 2022,
     "type": "Custom Shopify Theme",
     "languages": ["Javascript", "HTML", "CSS/SASS", "Liquid", "Json"],
-    "tools": ["Gulp.js", "Git", "Shopify CLI"]
+    "tools": ["Gulp.js", "Git", "Shopify CLI"],
+    "link": "https://youareluv.com/",
+    "figma": "https://www.figma.com/file/yGQ3h62LEwW2TNuhiuW9cq/Web",
+    "github": "https://github.com/sidmfkid/youareluv"
   },
   {
     "title": "24K Nail Spa",
@@ -19,7 +25,10 @@
     "type": "Custom Shopify Theme/App",
     "languages": ["Javascript", "HTML", "CSS/SASS", "Liquid", "Json"],
     "tools": ["Gulp.js", "Git", "Shopify CLI"],
-    "stack": ["Node.js", "Express.js"]
+    "stack": ["Node.js", "Express.js"],
+    "link": "",
+    "figma": "",
+    "github": "https://github.com/sidmfkid/24k-nail-spa-theme"
   },
   {
     "title": "Shop Writer",
@@ -33,20 +42,29 @@
       "Git",
       "Shopify CLI"
     ],
-    "stack": ["MongoDB", "Express.js", "React.js", "Node.js"]
+    "stack": ["MongoDB", "Express.js", "React.js", "Node.js"],
+    "link": "",
+    "figma": "",
+    "github": "https://github.com/sidmfkid/shop-writer"
   },
   {
     "title": "Sizely",
     "year": 2022,
     "type": "Custom Shopify App",
     "tools": ["Shopify API", "Bootstrap", "GraphQL", "Git", "Shopify CLI"],
-    "stack": ["MongoDB", "Express.js", "React.js", "Node.js"]
+    "stack": ["MongoDB", "Express.js", "React.js", "Node.js"],
+    "link": "",
+    "figma": "",
+    "github": "https://github.com/sidmfkid/sizely-app"
   },
   {
     "title": "Youtube Clone",
     "year": 2021,
     "type": "Personal Project",
     "languages": ["Javascript", "HTML", "CSS/SASS", "Liquid", "Json"],
-    "stack": ["MongoDB", "Express.js", "React.js", "Node.js"]
+    "stack": ["MongoDB", "Express.js", "React.js", "Node.js"],
+    "link": "react-portfolio-app-sid.herokuapp.com/",
+    "figma": "https://www.figma.com/file/lkDfOiFnKU3mogKKMvcQDp/Mockup?node-id=0%3A1",
+    "github": "https://github.com/sidmfkid/react-portfolio"
   }
 ]
