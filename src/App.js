@@ -38,7 +38,7 @@ function App() {
   });
 
   return (
-    <ScrollContainer snap="mandatory">
+    <ScrollContainer snap="proximity">
       {/* <img className="bg-image" src={bgImage} alt=""></img> */}
       {/* <div className="bg"> */}
       <ScrollPage page={0}>
@@ -61,21 +61,6 @@ function App() {
                 </Animator>
               </div>
             </section>
-
-            {/* <section className="section">
-        <div className="section__container">
-          <div className="section__title">Sidney Moore</div>
-          <div className="section__divider"></div>
-          <div className="section__subTitle">Full Stack Web Developer</div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="section__container">
-          <div className="section__title">Sidney Moore</div>
-          <div className="section__divider"></div>
-          <div className="section__subTitle">Full Stack Web Developer</div>
-        </div>
-      </section> */}
           </div>
         </Animator>
       </ScrollPage>
@@ -106,21 +91,6 @@ function App() {
               </div>
             </div>
           </section>
-
-          {/* <section className="section">
-        <div className="section__container">
-          <div className="section__title">Sidney Moore</div>
-          <div className="section__divider"></div>
-          <div className="section__subTitle">Full Stack Web Developer</div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="section__container">
-          <div className="section__title">Sidney Moore</div>
-          <div className="section__divider"></div>
-          <div className="section__subTitle">Full Stack Web Developer</div>
-        </div>
-      </section> */}
         </div>
       </ScrollPage>
 
@@ -153,21 +123,6 @@ function App() {
               </div>
             </div>
           </section>
-
-          {/* <section className="section">
-        <div className="section__container">
-          <div className="section__title">Sidney Moore</div>
-          <div className="section__divider"></div>
-          <div className="section__subTitle">Full Stack Web Developer</div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="section__container">
-          <div className="section__title">Sidney Moore</div>
-          <div className="section__divider"></div>
-          <div className="section__subTitle">Full Stack Web Developer</div>
-        </div>
-      </section> */}
         </div>
       </ScrollPage>
       <ScrollPage page={3}>
@@ -186,19 +141,7 @@ function App() {
               </Animator>
               <div className="section__body skills">
                 <Card title="Languages/Frameworks/Libraries" section={"libs"} />
-
-                {/* <Card title="Tools" section={"tools"} /> */}
               </div>
-              {/* <div className="section__footer">
-                <button className="back">
-                  <span className="material-symbols-outlined">arrow_back</span>
-                </button>
-                <button className="next">
-                  <span className="material-symbols-outlined">
-                    arrow_forward
-                  </span>
-                </button>
-              </div> */}
             </div>
           </section>
         </div>
@@ -248,21 +191,6 @@ function App() {
                 </Animator>
               </div>
             </section>
-
-            {/* <section className="section">
-        <div className="section__container">
-          <div className="section__title">Sidney Moore</div>
-          <div className="section__divider"></div>
-          <div className="section__subTitle">Full Stack Web Developer</div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="section__container">
-          <div className="section__title">Sidney Moore</div>
-          <div className="section__divider"></div>
-          <div className="section__subTitle">Full Stack Web Developer</div>
-        </div>
-      </section> */}
           </div>
         </Animator>
       </ScrollPage>

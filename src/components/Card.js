@@ -41,15 +41,15 @@ const libInfo = [
   },
   {
     name: "MongoDB",
-    ex: "3yrs",
+    ex: "2yrs",
   },
   {
     name: "Node.js",
-    ex: "3yrs",
+    ex: "2yrs",
   },
   {
     name: "React.js",
-    ex: "3yrs",
+    ex: "1yrs",
   },
   {
     name: "Sass/Scss",
@@ -71,20 +71,20 @@ const toolInfo = [
     ex: "2yrs",
   },
   {
-    name: "Trello",
-    ex: "1yr",
-  },
-  {
-    name: "NPM",
-    ex: "2yrs",
-  },
-  {
     name: "Github",
     ex: "2yrs",
   },
   {
     name: "Heroku",
     ex: "2yrs",
+  },
+  {
+    name: "NPM",
+    ex: "2yrs",
+  },
+  {
+    name: "Trello",
+    ex: "1yrs",
   },
   {
     name: "VS Code",

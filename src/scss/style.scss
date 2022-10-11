@@ -55,8 +55,8 @@ p {
     // place-items: center;
     align-items: center;
     &.skills {
-        overflow-y: scroll;
-        overflow-x: hidden;
+        // overflow-y: visible;
+        // overflow-x: hidden;
     }
 }
 
@@ -164,7 +164,7 @@ p {
             gap: 2.4rem;
             overflow-y: visible;
             overflow-x: scroll;
-            overflow-y: visible;
+
             grid-template-rows: auto-fill;
             @include media-tablet {
                 display: flex;
