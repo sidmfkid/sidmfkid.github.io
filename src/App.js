@@ -4,15 +4,11 @@ import {
   ScrollContainer,
   ScrollPage,
   Animator,
-  Sticky,
   Fade,
   FadeIn,
   MoveIn,
   MoveOut,
   batch,
-  ZoomIn,
-  Zoom,
-  StickyIn,
 } from "react-scroll-motion";
 import Card from "./components/Card";
 import projects from "./projects.json";
@@ -38,7 +34,7 @@ function App() {
   });
 
   return (
-    <ScrollContainer snap="proximity">
+    <ScrollContainer snap="mandatory">
       {/* <img className="bg-image" src={bgImage} alt=""></img> */}
       {/* <div className="bg"> */}
       <ScrollPage page={0}>

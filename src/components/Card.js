@@ -41,15 +41,15 @@ const libInfo = [
   },
   {
     name: "MongoDB",
-    ex: "2yrs",
+    ex: "3yrs",
   },
   {
     name: "Node.js",
-    ex: "2yrs",
+    ex: "3yrs",
   },
   {
     name: "React.js",
-    ex: "1yrs",
+    ex: "2yrs",
   },
   {
     name: "Sass/Scss",
