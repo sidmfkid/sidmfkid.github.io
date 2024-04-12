@@ -11,26 +11,26 @@
 body,
 html,
 :root {
-    margin: 0;
-    padding: 0;
-    font-size: 62.5%;
-    font-family: "Roboto Mono", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  font-family: "Roboto Mono", sans-serif;
 }
 
 *:root,
 :root::after,
 :root::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .material-symbols-outlined {
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 #root {
-    background: url(/src/BG-blur.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background: url(/src/BG-blur.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 h1,
 h2,
@@ -40,343 +40,355 @@ h5,
 span,
 div,
 p {
-    font-family: "Roboto Mono", monospace;
-    margin: 0;
-    // font-weight: regular;
+  font-family: "Roboto Mono", monospace;
+  margin: 0;
+  // font-weight: regular;
 }
 
 .main {
-    width: 100%;
-    display: grid;
-    height: 100vh;
-    overflow-y: visible;
+  width: 100%;
+  display: grid;
+  height: 100vh;
+  overflow-y: visible;
+  // overflow-x: hidden;
+  @include section-grid;
+  // place-items: center;
+  align-items: center;
+  &.skills {
+    // overflow-y: visible;
     // overflow-x: hidden;
-    @include section-grid;
-    // place-items: center;
-    align-items: center;
-    &.skills {
-        // overflow-y: visible;
-        // overflow-x: hidden;
-    }
+  }
 }
 
 .bg-image {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    filter: blur(3rem);
-    transform: scale(1.2);
-    z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  filter: blur(3rem);
+  transform: scale(1.2);
+  z-index: -1;
 }
 
 .section {
-    @include section-container;
-    height: fit-content;
-    padding-bottom: 6.2rem;
+  @include section-container;
+  height: fit-content;
+  padding-bottom: 6.2rem;
 
-    &__container {
-        width: 100%;
+  &__container {
+    width: 100%;
+  }
+  &__title {
+    font-size: 6.4rem;
+    font-weight: 300;
+    line-height: 7.2rem;
+    // text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1.6rem;
+    font-family: "Roboto Mono", monospace;
+
+    color: white;
+    @include media-medium {
+      font-size: 4rem;
+      line-height: 4.8rem;
     }
-    &__title {
-        font-size: 6.4rem;
-        font-weight: 300;
-        line-height: 7.2rem;
-        // text-transform: uppercase;
-        letter-spacing: 0.2rem;
-        margin-bottom: 1.6rem;
-        font-family: "Roboto Mono", monospace;
-
-        color: white;
-        @include media-medium {
-            font-size: 4rem;
-            line-height: 4.8rem;
-        }
-        @include media-small {
-            font-size: 2.4rem;
-            line-height: 3.2rem;
-        }
+    @include media-small {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
     }
-    &__divider {
-        margin-bottom: 1.6rem;
-        width: 12rem;
-        height: 3px;
-        background-color: white;
+  }
+  &__divider {
+    margin-bottom: 1.6rem;
+    width: 12rem;
+    height: 3px;
+    background-color: white;
+  }
+  &__accent {
+    color: white;
+  }
+  &__subTitle {
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 3.2rem;
+    // text-transform: uppercase;
+    letter-spacing: 0.2rem;
+
+    color: white;
+
+    @include media-medium {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
     }
-    &__subTitle {
-        font-size: 2.4rem;
-        font-weight: 300;
-        line-height: 3.2rem;
-        // text-transform: uppercase;
-        letter-spacing: 0.2rem;
-
-        color: white;
-        @include media-medium {
-            font-size: 1.6rem;
-            line-height: 2.4rem;
-        }
-        @include media-small {
-            font-size: 1.6rem;
-            line-height: 1.6rem;
-        }
-
-        span {
-            display: block;
-            font-size: 2rem;
-            line-height: 2.4rem;
-            @include media-small {
-                font-size: 1.6rem;
-                line-height: 2rem;
-            }
-        }
+    @include media-small {
+      font-size: 1.6rem;
+      line-height: 1.6rem;
     }
 
-    &__body {
-        width: 100%;
-        position: relative;
-        &::after {
-            position: absolute;
-            content: "";
-            width: 3.2rem;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 2;
-            border-radius: 20px;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-        }
-        &::before {
-            position: absolute;
-            content: "";
-            width: 3.2rem;
-            height: 100%;
-            top: 0;
-            right: 0;
-            z-index: 2;
-            border-radius: 20px;
-            background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-        }
-        .cards {
-            padding: 2.4rem 0rem;
-            // display: grid;
-            // grid-template-columns: repeat(3, 1fr);
-            display: flex;
-
-            gap: 2.4rem;
-            overflow-y: visible;
-            overflow-x: scroll;
-
-            grid-template-rows: auto-fill;
-            @include media-tablet {
-                display: flex;
-
-                width: 100%;
-                .card {
-                    min-width: 30rem;
-                }
-            }
-            @include media-small {
-                display: flex;
-                overflow-x: scroll;
-                overflow-y: visible;
-
-                width: 100%;
-                .card {
-                    min-width: calc(100% - 3.2rem);
-                }
-            }
-        }
+    span {
+      display: block;
+      font-size: 2rem;
+      line-height: 2.4rem;
+      @include media-small {
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
     }
-    &__body.skills {
+  }
+
+  &__body {
+    width: 100%;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 3.2rem;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      border-radius: 20px;
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0)
+      );
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 3.2rem;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      border-radius: 20px;
+      background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0)
+      );
+    }
+    .cards {
+      padding: 2.4rem 0rem;
+      // display: grid;
+      // grid-template-columns: repeat(3, 1fr);
+      display: flex;
+
+      gap: 2.4rem;
+      overflow-y: visible;
+      overflow-x: scroll;
+
+      grid-template-rows: auto-fill;
+      @include media-tablet {
         display: flex;
-        flex-wrap: wrap;
-        gap: 2.4rem;
 
-        &::after,
-        &::before {
-            display: none;
+        width: 100%;
+        .card {
+          min-width: 30rem;
         }
-    }
-    &__footer {
+      }
+      @include media-small {
         display: flex;
-        justify-content: center;
-        gap: 2.4rem;
-        button {
-            background-color: transparent;
-            border: none;
-            color: white;
-            border-bottom: 1px solid white;
+        overflow-x: scroll;
+        overflow-y: visible;
+
+        width: 100%;
+        .card {
+          min-width: calc(100% - 3.2rem);
         }
+      }
     }
+  }
+  &__body.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: center;
+    gap: 2.4rem;
+    button {
+      background-color: transparent;
+      border: none;
+      color: white;
+      border-bottom: 1px solid white;
+    }
+  }
 }
 
 .card {
+  padding: 1.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.688);
+  position: relative;
+  min-width: 30rem;
+  min-height: 38.5rem;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  &.flip {
+    transform: rotateY(180deg);
+    .card__back {
+      opacity: 1;
+    }
+    .card__front {
+      opacity: 0;
+    }
+  }
+  // height: min-content;
+  &__front,
+  &__back {
+    display: grid;
+    grid-template-rows: auto;
+    backface-visibility: hidden;
+    // height: 100%;
+    // width: 100%;
     padding: 1.6rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.688);
-    position: relative;
-    min-width: 30rem;
-    min-height: 38.5rem;
-    transform-style: preserve-3d;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     transition: all 0.5s ease;
-    &.flip {
-        transform: rotateY(180deg);
-        .card__back {
-            opacity: 1;
-        }
-        .card__front {
-            opacity: 0;
-        }
+  }
+  &__back {
+    transform: rotateY(180deg);
+    opacity: 0;
+    .card__body {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
     }
-    // height: min-content;
-    &__front,
-    &__back {
-        display: grid;
-        grid-template-rows: auto;
-        backface-visibility: hidden;
-        // height: 100%;
-        // width: 100%;
-        padding: 1.6rem;
+  }
+  &.skills {
+    width: 100%;
+    min-width: unset;
+    min-height: unset;
+  }
+  &__heading {
+    width: 100%;
+    margin-bottom: 1.6rem;
+  }
+  &__title {
+    @include cardTitle;
 
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        transition: all 0.5s ease;
+    @include media-small {
+      font-size: 1.6rem;
+      line-height: 2rem;
     }
-    &__back {
-        transform: rotateY(180deg);
-        opacity: 0;
-        .card__body {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.6rem;
-        }
-    }
+  }
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.6rem;
     &.skills {
-        width: 100%;
-        min-width: unset;
-        min-height: unset;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
-    &__heading {
-        width: 100%;
-        margin-bottom: 1.6rem;
+  }
+  &__year {
+    @include cardYear;
+  }
+  &__type {
+    @include cardType;
+    margin-bottom: 0.8rem;
+    @include media-small {
+      font-size: 1.4rem;
+      line-height: 2rem;
     }
-    &__title {
-        @include cardTitle;
+  }
+  &__divider {
+    height: 3px;
+    background-color: white;
+    width: 8rem;
+    &.skills {
+      margin: 0 auto;
+    }
+  }
+  &__body {
+    display: flex;
+    color: white;
+    flex-wrap: wrap;
 
-        @include media-small {
-            font-size: 1.6rem;
-            line-height: 2rem;
-        }
+    ul,
+    span,
+    li {
+      font-family: "Roboto Flex", sans-serif;
+      font-weight: 400;
+      font-size: 1.6rem;
     }
-    &__wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 1.6rem;
-        &.skills {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
+
+    &.skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 1.6rem;
     }
-    &__year {
-        @include cardYear;
-    }
-    &__type {
-        @include cardType;
-        margin-bottom: 0.8rem;
-        @include media-small {
-            font-size: 1.4rem;
-            line-height: 2rem;
-        }
-    }
-    &__divider {
-        height: 3px;
-        background-color: white;
-        width: 8rem;
-        &.skills {
-            margin: 0 auto;
-        }
-    }
-    &__body {
-        display: flex;
+    .link {
+      font-family: "Roboto Flex", sans-serif;
+      font-weight: 400;
+      font-size: 1.6rem;
+      width: 100%;
+      height: min-content;
+
+      a {
+        display: block;
         color: white;
-        flex-wrap: wrap;
-
-        ul,
-        span,
-        li {
-            font-family: "Roboto Flex", sans-serif;
-            font-weight: 400;
-            font-size: 1.6rem;
-        }
-
-        &.skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            gap: 1.6rem;
-        }
-        .link {
-            font-family: "Roboto Flex", sans-serif;
-            font-weight: 400;
-            font-size: 1.6rem;
-            width: 100%;
-            height: min-content;
-
-            a {
-                display: block;
-                color: white;
-                text-align: center;
-                text-decoration: none;
-                padding-bottom: 0.8rem;
-                width: fit-content;
-                margin: 0 auto;
-                border-bottom: 1px solid white;
-            }
-        }
+        text-align: center;
+        text-decoration: none;
+        padding-bottom: 0.8rem;
+        width: fit-content;
+        margin: 0 auto;
+        border-bottom: 1px solid white;
+      }
     }
-    &__footer {
-        width: 100%;
-        align-self: flex-end;
-        button {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            margin-left: auto;
-            background-color: transparent;
-            color: white;
-            border: none;
-            border-bottom: 1px solid white;
-        }
-        .icon {
-            margin-left: 0.8rem;
-        }
+  }
+  &__footer {
+    width: 100%;
+    align-self: flex-end;
+    button {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin-left: auto;
+      background-color: transparent;
+      color: white;
+      border: none;
+      border-bottom: 1px solid white;
     }
-    .item {
-        @include media-medium {
-            width: 5.6rem;
-        }
-        &__icon {
-            margin-bottom: 0.8rem;
-            img {
-                display: block;
-                margin: 0 auto;
-            }
-        }
-        &__name,
-        &__ex {
-            font-family: "Roboto Flex", sans-serif;
-            font-weight: 400;
-            font-size: 1.6rem;
-            text-align: center;
-        }
+    .icon {
+      margin-left: 0.8rem;
     }
+  }
+  .item {
+    @include media-medium {
+      width: 5.6rem;
+    }
+    &__icon {
+      margin-bottom: 0.8rem;
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    &__name,
+    &__ex {
+      font-family: "Roboto Flex", sans-serif;
+      font-weight: 400;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
 }
 .hide {
-    visibility: hidden;
+  visibility: hidden;
 }

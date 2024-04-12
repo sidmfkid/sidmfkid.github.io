@@ -152,6 +152,9 @@ p {
   height: 3px;
   background-color: white;
 }
+.section__accent {
+  color: white;
+}
 .section__subTitle {
   font-size: 2.4rem;
   font-weight: 300;

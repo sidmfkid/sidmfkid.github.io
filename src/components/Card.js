@@ -21,11 +21,11 @@ const svgsTools = reqTools.keys().map((key) => reqTools(key));
 const libInfo = [
   {
     name: "Liquid",
-    ex: "2yrs",
+    ex: "3yrs",
   },
   {
     name: "CSS",
-    ex: "3yrs",
+    ex: "4yrs",
   },
   {
     name: "EJS",
@@ -33,11 +33,11 @@ const libInfo = [
   },
   {
     name: "HTML",
-    ex: "3yrs",
+    ex: "4yrs",
   },
   {
     name: "Javascript",
-    ex: "3yrs",
+    ex: "4yrs",
   },
   {
     name: "MongoDB",
@@ -49,7 +49,7 @@ const libInfo = [
   },
   {
     name: "React.js",
-    ex: "2yrs",
+    ex: "3yrs",
   },
   {
     name: "Sass/Scss",
@@ -68,27 +68,28 @@ const toolInfo = [
   },
   {
     name: "Figma",
-    ex: "2yrs",
+    ex: "3yrs",
   },
   {
     name: "Github",
-    ex: "2yrs",
+    ex: "4yrs",
   },
   {
     name: "Heroku",
+    ex: "3yrs",
+  },
+  {
+    name: "Jira",
     ex: "2yrs",
   },
   {
-    name: "NPM",
+    name: "Storybook",
     ex: "2yrs",
   },
-  {
-    name: "Trello",
-    ex: "1yrs",
-  },
+
   {
     name: "VS Code",
-    ex: "3yrs",
+    ex: "4yrs",
   },
 ];
 
@@ -145,13 +146,18 @@ function Card({
     };
   });
 
-  const toolz = svgsTools.map((svg, i) => {
-    return {
-      svg: svg,
-      name: toolInfo[i].name,
-      ex: toolInfo[i].ex,
-    };
-  });
+  const toolz = svgsTools
+    .map((svg, i) => {
+      if (toolInfo[i] === undefined) {
+        return null;
+      }
+      return {
+        svg: svg,
+        name: toolInfo[i].name,
+        ex: toolInfo[i].ex,
+      };
+    })
+    .filter((tool) => tool !== null);
 
   const iconsLibs = libs.map((lib, i) => {
     return (

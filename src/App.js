@@ -12,6 +12,9 @@ import {
 } from "react-scroll-motion";
 import Card from "./components/Card";
 import projects from "./projects.json";
+import { Hero } from "./components/Hero/Hero";
+import { About } from "./components/About/About";
+import { Skills } from "./components/Skills/Skills";
 
 const ZoomInScrollOut = batch(FadeIn(), MoveIn(500, 0), MoveOut(-500, 0));
 
@@ -38,56 +41,10 @@ function App() {
       {/* <img className="bg-image" src={bgImage} alt=""></img> */}
       {/* <div className="bg"> */}
       <ScrollPage page={0}>
-        <Animator animation={batch(Fade(), MoveOut(0, -500))}>
-          <div className="main">
-            <section className="section">
-              <div className="section__container">
-                <Animator
-                  animation={batch(Fade(), MoveIn(0, -300), MoveOut(0, 500))}
-                >
-                  <div className="section__title">Sidney Moore</div>
-                </Animator>
-                <Animator animation={batch(MoveOut(-500, 0), Fade())}>
-                  <div className="section__divider"></div>
-                </Animator>
-                <Animator animation={batch(MoveOut(500, 0), Fade())}>
-                  <div className="section__subTitle">
-                    Full Stack Web Developer
-                  </div>
-                </Animator>
-              </div>
-            </section>
-          </div>
-        </Animator>
+        <Hero />
       </ScrollPage>
       <ScrollPage page={1}>
-        <div className="main">
-          <section className="section">
-            <div className="section__container">
-              <Animator
-                animation={batch(Fade(), MoveIn(0, -300), MoveOut(0, 500))}
-              >
-                <div className="section__title">About Me</div>
-              </Animator>
-              <Animator
-                animation={batch(MoveIn(-500, 0), Fade(), MoveOut(800, 0))}
-              >
-                <div className="section__divider"></div>
-              </Animator>
-              <div className="section__subTitle">
-                <Animator animation={ZoomInScrollOut}>
-                  <span>Location: Indianapolis, Indiana</span>
-                  <span>
-                    Hobbies: Music Production, Go Karting, Rocket League
-                  </span>
-                  <span>
-                    Favorite Software: FL Studio, Pro Tools, Adobe Suite
-                  </span>
-                </Animator>
-              </div>
-            </div>
-          </section>
-        </div>
+        <About />
       </ScrollPage>
 
       <ScrollPage page={2}>
@@ -122,25 +79,7 @@ function App() {
         </div>
       </ScrollPage>
       <ScrollPage page={3}>
-        <div className="main skills">
-          <section className="section">
-            <div className="section__container">
-              <Animator
-                animation={batch(Fade(), MoveIn(0, -300), MoveOut(0, 300))}
-              >
-                <div className="section__title">Skills/Experience</div>
-              </Animator>
-              <Animator
-                animation={batch(MoveIn(-500, 0), Fade(), MoveOut(800, 0))}
-              >
-                <div className="section__divider"></div>
-              </Animator>
-              <div className="section__body skills">
-                <Card title="Languages/Frameworks/Libraries" section={"libs"} />
-              </div>
-            </div>
-          </section>
-        </div>
+        <Skills />
       </ScrollPage>
       <ScrollPage page={4}>
         <div className="main skills">
