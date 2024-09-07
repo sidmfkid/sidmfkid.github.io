@@ -22,6 +22,8 @@ html,
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
 }
 
 h1,
@@ -92,6 +94,76 @@ p {
   z-index: -1;
 }
 
+.maskedDots {
+  position: relative;
+}
+
+.dotContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.dots {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+}
+
+.crossContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: rotate(180deg);
+}
+.crossContainer.reverse {
+  transform: rotate(0deg);
+}
+
+.crosses {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+}
+
+.lines {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  mask-image: url(/src/imgs/lines.png);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 20%, #dc1414 50%, rgba(255, 255, 255, 0));
+}
+
+@media screen and (max-width: 600px) {
+  .dotContainer,
+  .crossContainer {
+    width: auto;
+    height: 100%;
+  }
+  .dots,
+  .crosses {
+    width: auto;
+    height: 100%;
+  }
+}
 .section {
   height: fit-content;
   padding-bottom: 6.2rem;
@@ -124,8 +196,12 @@ p {
 }
 .section__container {
   width: 100%;
+  position: relative;
+  z-index: 10;
 }
 .section__title {
+  position: relative;
+  z-index: 10;
   font-size: 6.4rem;
   font-weight: 300;
   line-height: 7.2rem;
@@ -147,6 +223,8 @@ p {
   }
 }
 .section__divider {
+  position: relative;
+  z-index: 10;
   margin-bottom: 1.6rem;
   width: 12rem;
   height: 3px;
@@ -154,8 +232,20 @@ p {
 }
 .section__accent {
   color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  transform: translate(500px, -200px);
+  z-index: -1;
+}
+.section__accent img {
+  width: 40%;
 }
 .section__subTitle {
+  position: relative;
+  z-index: 10;
   font-size: 2.4rem;
   font-weight: 300;
   line-height: 3.2rem;
@@ -257,6 +347,21 @@ p {
   border: none;
   color: white;
   border-bottom: 1px solid white;
+}
+
+.shimmer {
+  color: grey;
+  display: inline-block;
+  mask: linear-gradient(-60deg, #000 10%, rgba(0, 0, 0, 0.3333333333), #000 30%) right/300% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 2.5s infinite 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 50px;
+  max-width: 1000px;
+}
+
+.small {
+  font-size: 2rem;
+  letter-spacing: 1px;
 }
 
 .card {
