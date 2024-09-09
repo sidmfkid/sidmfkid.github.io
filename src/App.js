@@ -118,7 +118,7 @@ function App() {
             </section>
           </div>
         </ScrollPage>
-        <ScrollPage page={5}>
+        {/* <ScrollPage page={5}>
           <Animator animation={batch(Fade(), MoveOut(0, -500))}>
             <div className="main">
               <section className="section">
@@ -142,7 +142,7 @@ function App() {
               </section>
             </div>
           </Animator>
-        </ScrollPage>
+        </ScrollPage> */}
         {/* </div> */}
       </ScrollContainer>
     </div>
